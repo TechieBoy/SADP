@@ -3,23 +3,17 @@ package ui;
 
 import controller.CalcOps;
 
+import java.util.Scanner;
+
 public class CalcUI {
-    private String expr;
-
-    public CalcUI(String expr) {
-        this.expr = expr;
-    }
-
-    public String getExpr() {
-        return expr;
-    }
-
-    public void setExpr(String expr) {
-        this.expr = expr;
-    }
 
     public void runUI() {
+        System.out.println("Enter Expression :");
+        Scanner sc = new Scanner(System.in);
         CalcOps c = new CalcOps();
-        System.out.println(c.calc(expr));
+        while (true) {
+            String expr = sc.next();
+            System.out.println(c.calc(expr));
+        }
     }
 }
