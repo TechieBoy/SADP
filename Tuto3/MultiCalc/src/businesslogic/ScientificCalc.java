@@ -103,9 +103,9 @@ public class ScientificCalc extends SimpleCalc implements CalcInterface, SciMath
                     if (super.isOp(top) || isOp(top)) {
                         if (!(priority(c) > priority(top))) {
                             stchar.pop();
-                            if (isOp(top)) {
-                                stnum.push(unaryOperation(top));
-                            } else if (super.isOp(top)) {
+                            if (super.isOp(top)) {
+                                stnum.push(binaryOperation(top));
+                            } else if (isOp(top)) {
                                 stnum.push(unaryOperation(top));
                             }
                         } else {

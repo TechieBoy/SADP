@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ScientificCalcTest {
 
-    private float delta = (float) 0.000000002;
+    private float delta = (float) 0.0000002;
     private ScientificCalc bl;
 
     @org.junit.Before
@@ -17,8 +17,8 @@ public class ScientificCalcTest {
 
     @Test
     public void test1() {
-        float actual = bl.calculate("1 + 2 + tan(90)");
-        float expected = Float.POSITIVE_INFINITY;
+        float actual = bl.calculate("tan(45)");
+        float expected = 1.0f;
         assertEquals(expected, actual, delta);
     }
 
@@ -87,8 +87,8 @@ public class ScientificCalcTest {
 
     @Test
     public void test11() {
-        float actual = bl.calculate("( 2 - 3 ) * 5 * sin(-45) * cos(-45)");
-        float expected = (float) 2.5;
+        float actual = bl.calculate("sin(45) * cos(45)");
+        float expected = (float) 0.5;
         assertEquals(expected, actual, delta);
     }
 
