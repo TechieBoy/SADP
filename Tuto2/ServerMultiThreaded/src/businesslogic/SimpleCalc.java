@@ -3,8 +3,8 @@ package businesslogic;
 import java.util.Stack;
 
 public class SimpleCalc implements CalcInterface, BasicMathInterface {
-    protected Stack<Float> stnum = new Stack<Float>();
-    protected Stack<String> stchar = new Stack<String>();
+    protected Stack<Float> stnum = new Stack<>();
+    protected Stack<String> stchar = new Stack<>();
 
     public float add(float a, float b) {
         return a + b;
@@ -23,35 +23,27 @@ public class SimpleCalc implements CalcInterface, BasicMathInterface {
     }
 
     public int priority(String c) {
-        if (c.equals("+") || c.equals("-"))
-            return 0;
-        else if (c.equals("*") || c.equals("/"))
-            return 1;
-        else if (c.equals("sin") || c.equals("cos") || c.equals("tan"))
-            return 2;
-        return -1;
+        switch (c) {
+            case "+":
+            case "-":
+                return 0;
+            case "*":
+            case "/":
+                return 1;
+            default:
+                return -1;
+        }
     }
 
     public boolean isNum(String a) {
         char c = a.charAt(0);
-        if ((int) (c - '0') >= 0 && (int) (c - '0') < 10)
-            return true;
-        else return false;
+        return (c - '0') >= 0 && (c - '0') < 10;
     }
 
     public boolean isOp(String c) {
-        if (c.equals("+") || c.equals("-") || c.equals("*") || c.equals("/"))
-            return true;
-        else return false;
+        return c.equals("+") || c.equals("-") || c.equals("*") || c.equals("/");
     }
 
-    public boolean ischar(String a) {
-        char c = a.charAt(0);
-        if (0 <= (c - 'a') && 25 >= (c - 'a'))
-            return true;
-        else
-            return false;
-    }
 
     public float choose(String c, float num1, float num2) {
         switch (c) {
@@ -68,7 +60,7 @@ public class SimpleCalc implements CalcInterface, BasicMathInterface {
         }
     }
 
-    private float binaryOperation(String op) {
+    protected float binaryOperation(String op) {
         float b = stnum.pop();
         float a = stnum.pop();
         return (choose(op, a, b));
