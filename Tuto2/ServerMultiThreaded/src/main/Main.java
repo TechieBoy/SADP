@@ -2,7 +2,6 @@ package main;
 
 import server.Server;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +12,7 @@ public class Main {
         while(true) {
             try {
                 server.runServer();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
