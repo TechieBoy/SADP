@@ -14,7 +14,7 @@ public class CalcFactory {
         Matcher matcher = p.matcher(expr);
         if(matcher.find()) {
             System.out.println("Creating scientific calc");
-            return  new ScientificCalc();
+            return new ScientificCalc();
         }
         System.out.println("Creating simple calc");
         return new SimpleCalc();
