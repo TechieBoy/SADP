@@ -17,8 +17,8 @@ public class SimpleCalcTest {
 
     @Test
     public void test1() {
-        float actual = bl.calculate("1 + 2");
-        float expected = (float)3;
+        float actual = bl.calculate("1 + 2.5");
+        float expected = (float)3.5;
         assertEquals(expected, actual, delta);
     }
     @Test

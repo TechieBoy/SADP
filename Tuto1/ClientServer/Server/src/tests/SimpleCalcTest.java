@@ -17,8 +17,8 @@ public class SimpleCalcTest {
 
     @Test
     public void test1() {
-        float actual = bl.calculate("1 + 2");
-        float expected = (float)3;
+        float actual = bl.calculate("1 + 2.5");
+        float expected = (float)3.5;
         assertEquals(expected, actual, delta);
     }
     @Test
@@ -108,6 +108,7 @@ public class SimpleCalcTest {
     }
     @Test
     public void test16() {
+        
         float actual = bl.calculate("( 2 * 6 ) + ( 2 / 5 )-(2/4)");
         float expected = (float)11.9;
         assertEquals(expected, actual, delta);
@@ -126,6 +127,7 @@ public class SimpleCalcTest {
     }
     @Test
     public void test19() {
+        
         float actual = bl.calculate("2+3*5");
         float expected = (float)17;
         assertEquals(expected, actual, delta);

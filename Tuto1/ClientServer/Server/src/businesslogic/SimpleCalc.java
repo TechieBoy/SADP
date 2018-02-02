@@ -37,7 +37,7 @@ public class SimpleCalc implements CalcInterface, BasicMathInterface {
 
     public boolean isNum(String a) {
         char c = a.charAt(0);
-        return (c - '0') >= 0 && (c - '0') < 10;
+        return (((c - '0') >= 0 && (c - '0') < 10) || c == '.');
     }
 
     public boolean isOp(String c) {
@@ -61,8 +61,10 @@ public class SimpleCalc implements CalcInterface, BasicMathInterface {
     }
 
     protected float binaryOperation(String op) {
+        float a = 0;
         float b = stnum.pop();
-        float a = stnum.pop();
+        if(!stnum.empty())
+            a = stnum.pop();
         return (choose(op, a, b));
 
     }

@@ -87,8 +87,8 @@ public class ScientificCalcTest {
 
     @Test
     public void test11() {
-        float actual = bl.calculate("sin(45) * cos(45)");
-        float expected = (float) 0.5;
+        float actual = bl.calculate("sin(-45) * cos(45)");
+        float expected = (float) -0.5;
         assertEquals(expected, actual, delta);
     }
 
