@@ -1,15 +1,18 @@
 package controller;
 
-import businesslogic.ScientificCalc;
+import businesslogic.CalcInterface;
+import businesslogic.factory.CalcFactory;
 
 public class CalcOps {
-    private ScientificCalc sCalc;
+    private CalcInterface sCalc;
+    private CalcFactory factory;
 
     public CalcOps() {
-        sCalc = new ScientificCalc();
+        factory = new CalcFactory();
     }
 
     public float calc(String expr) {
+        sCalc = factory.getAppropriateCalc(expr);
         return sCalc.calculate(expr);
     }
 }
