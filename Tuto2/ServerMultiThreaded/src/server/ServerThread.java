@@ -7,13 +7,16 @@ import java.net.Socket;
 
 public class ServerThread  extends Thread{
     Socket socket;
+    String clientNum;
 
-    public ServerThread(Socket socket) {
+    public ServerThread(Socket socket, String clientNum) {
         this.socket = socket;
+        this.clientNum = clientNum;
     }
+
     public void run() {
         try {
-            System.out.println("Heard connection");
+            System.out.println("Heard connection from " + clientNum);
             InputStream is = socket.getInputStream();
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(isr);

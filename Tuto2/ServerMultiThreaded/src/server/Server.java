@@ -1,8 +1,7 @@
 package server;
 
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 
 public class Server {
     private Socket socket;
@@ -21,7 +20,8 @@ public class Server {
     public void runServer() {
         try {
             socket = serverSocket.accept();
-            new ServerThread(socket).start();
+            String name = socket.getInetAddress().getHostName();
+            new ServerThread(socket, name).start();
         } catch (Exception e) {
             e.printStackTrace();
         }
