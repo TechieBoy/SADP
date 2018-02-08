@@ -27,6 +27,7 @@ public class ServerThread  extends Thread{
             } catch (NumberFormatException e) {
                 returnMessage = "Please send a proper number\n";
             }
+            Thread.sleep(6000);
             OutputStream os = socket.getOutputStream();
             OutputStreamWriter osw = new OutputStreamWriter(os);
             BufferedWriter bw = new BufferedWriter(osw);
