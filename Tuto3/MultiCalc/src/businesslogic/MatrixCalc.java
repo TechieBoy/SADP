@@ -1,11 +1,24 @@
 package businesslogic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MatrixCalc implements MatMathInterface, CalcInterface {
     @Override
     public float calculate(String expr) {
-        return 0;
+        expr = expr.replaceAll("\\s", "");
+        ArrayList<String> myList = new ArrayList<>(Arrays.asList(expr.split("[(,)]")));
+        switch (myList.get(0).toLowerCase()) {
+            case "avg":
+                return avg(myList);
+            case "sum":
+                return sum(myList);
+            case "max":
+                return max(myList);
+            case "min":
+                return min(myList);
+        }
+        return 0.0f;
     }
 
     @Override

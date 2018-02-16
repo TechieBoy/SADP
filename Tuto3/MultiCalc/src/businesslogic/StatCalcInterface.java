@@ -3,9 +3,9 @@ package businesslogic;
 import java.util.ArrayList;
 
 public interface StatCalcInterface {
-    float add(ArrayList<Float> a);
-    float max(ArrayList<Float> a);
-    float min(ArrayList<Float> a);
-    float avg(ArrayList<Float> a);
+    float sum(ArrayList<String> a);
+    float max(ArrayList<String> a);
+    float min(ArrayList<String> a);
+    float avg(ArrayList<String> a);
 
 }
