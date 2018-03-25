@@ -1,0 +1,328 @@
+Notice 
+
+1) Post 3 Times
+
+localhost:8080/tpo/webapi/notices/
+
+{ "content":"This is a notice"}
+
+2) Get
+
+localhost:8080/tpo/webapi/notices/
+
+3)Delete
+
+localhost:8080/tpo/webapi/notices/3
+
+4)Put
+
+localhost:8080/tpo/webapi/notices/1
+
+{ "content":"This is a notice updated"}
+
+5) Get
+
+localhost:8080/tpo/webapi/notices/
+
+
+Feedback
+
+1) Post 3 Times
+
+localhost:8080/tpo/webapi/feedback
+
+{ "content":"This is a feedback",
+  "branch":"mechanical"
+}
+
+{ "content":"This is a feedback",
+  "branch":"it"
+}
+
+{ "content":"This is a feedback",
+  "branch":"comps"
+}
+
+2) GET
+
+localhost:8080/tpo/webapi/feedback
+
+
+Student
+
+1)GET
+
+localhost:8080/tpo/webapi/students
+
+localhost:8080/tpo/webapi/students?branch=it
+
+localhost:8080/tpo/webapi/students/s3
+
+2) POST
+
+localhost:8080/tpo/webapi/students
+
+{
+        "name": "name",
+        "password": "s7pass",
+        "userId": "s7",
+        "branch": "it",
+        "cgpa": 8.19,
+        "year": 4
+ }
+ 
+ 3) GET
+ 
+ localhost:8080/tpo/webapi/students
+ 
+ 4)DELETE
+ 
+ localhost:8080/tpo/webapi/students/s3
+ 
+ 5) GET
+ 
+ localhost:8080/tpo/webapi/students
+ 
+ 6) PUT
+ 
+ localhost:8080/tpo/webapi/students/s2
+ 
+  {
+        "name": "name_upadated",
+        "password": "s2pass_updated",
+        "userId": "s2",
+        "branch": "mechanical",
+        "cgpa": 8.19,
+        "year": 4
+ }
+ 
+ 
+ Company
+ 
+ 
+ 1) GET
+ 
+ localhost:8080/tpo/webapi/companies
+ 
+ localhost:8080/tpo/webapi/companies/c3
+ 
+ localhost:8080/tpo/webapi/companies?branch=it
+ 
+ 2)POST
+ 
+ localhost:8080/tpo/webapi/companies
+ 
+  {
+        "name": "name",
+        "password": "c4pass",
+        "userId": "c4",
+        "branches": [
+            "it",
+            "comps"
+        ],
+        "cTC": 1000,
+        "date_of_process": "2018-03-25T10:05:23.2Z[UTC]",
+        "year": 4
+    }
+
+3) GET
+ 
+ localhost:8080/tpo/webapi/companies
+ 
+4) DELETE
+
+localhost:8080/tpo/webapi/companies/c2
+
+5) GET
+ 
+ localhost:8080/tpo/webapi/companies
+
+6) PUT
+
+localhost:8080/tpo/webapi/companies/c3
+
+ {
+    "name": "name_updated",
+    "password": "c3pass_updated",
+    "userId": "c3",
+    "branches": [
+        "it",
+        "comps"
+    ],
+    "cTC": 1000,
+    "date_of_process": "2018-03-25T10:05:23.2Z[UTC]",
+    "year": 4
+}
+
+7) GET
+
+localhost:8080/tpo/webapi/companies/c3
+
+LOGIN
+
+1) POST
+
+{
+	"userId":"c1",
+	"password":"c1pass"
+}
+
+{
+	"userId":"c1",
+	"password":"c1pdddass"
+}
+
+{
+	"userId":"t1",
+	"password":"t1pass"
+}
+
+{
+	"userId":"c3",
+	"password":"c3pass_updated"
+}
+
+{
+	"userId":"s2",
+	"password":"s2pass_updated"
+}
+ 
+SHORTLIST
+
+1) GET
+
+localhost:8080/tpo/webapi/shortlist/c1
+
+2) POST
+
+localhost:8080/tpo/webapi/shortlist/c1
+
+
+[ {
+        "name": "name",
+        "userId": "s4",
+        "branch": "it",
+        "cgpa": 8.19,
+        "year": 4
+    },
+    {
+        "name": "name",
+        "userId": "s5",
+        "branch": "comps",
+        "cgpa": 8.19,
+        "year": 4
+    }]
+
+3) GET
+
+localhost:8080/tpo/webapi/shortlist/c1
+
+
+4) DELETE
+
+localhost:8080/tpo/webapi/shortlist/c1
+
+{
+        "name": "name",
+        "userId": "s4",
+        "branch": "it",
+        "cgpa": 8.19,
+        "year": 4
+    }
+    
+5) GET
+
+localhost:8080/tpo/webapi/shortlist/c1
+
+
+PLACEMENT
+
+1)GET
+
+localhost:8080/tpo/webapi/placed/c1
+
+2) POST
+
+localhost:8080/tpo/webapi/placed/c1
+
+[ {
+        "name": "name",
+        "userId": "s4",
+        "branch": "it",
+        "cgpa": 8.19,
+        "year": 4
+    },
+    {
+        "name": "name",
+        "userId": "s5",
+        "branch": "comps",
+        "cgpa": 8.19,
+        "year": 4
+    }]
+
+3) GET
+
+localhost:8080/tpo/webapi/placed/c1
+
+4) DELETE
+
+{
+        "name": "name",
+        "userId": "s4",
+        "branch": "it",
+        "cgpa": 8.19,
+        "year": 4
+    }
+    
+5)GET
+
+localhost:8080/tpo/webapi/placed/c1
+
+
+Applicant
+
+
+1) GET
+
+localhost:8080/tpo/webapi/applicants/c1
+
+2) POST 2 times
+
+localhost:8080/tpo/webapi/applicants/c1
+
+{
+        "name": "name",
+        "userId": "s4",
+        "branch": "it",
+        "cgpa": 8.19,
+        "year": 4
+    }
+
+{
+        "name": "name",
+        "userId": "s5",
+        "branch": "comps",
+        "cgpa": 8.19,
+        "year": 4
+    }
+    
+3) GET
+
+localhost:8080/tpo/webapi/applicants/c1
+
+4) DELETE
+
+localhost:8080/tpo/webapi/applicants/c1
+
+{
+        "name": "name",
+        "userId": "s5",
+        "branch": "comps",
+        "cgpa": 8.19,
+        "year": 4
+    }
+
+5) GET
+
+localhost:8080/tpo/webapi/applicants/c1
+
